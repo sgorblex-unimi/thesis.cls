@@ -1,6 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{thesis}[Thesis class by Alessandro "Sgorblex" Clerici Lorenzini]
 
+\newif\if@compact
+\DeclareOption{compact}{\@compacttrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
 
@@ -9,7 +11,20 @@
 \RequirePackage[base]{babel}
 \RequirePackage{graphics}
 
-\pagestyle{headings}
+\RequirePackage{geometry}
+\if@compact
+	\geometry{
+		paperheight=\dimexpr\textheight+8mm\relax,
+		paperwidth=\dimexpr\textwidth+2mm\relax,
+		left=1mm,
+		top=4mm,
+		right=1mm,
+		bottom=4mm
+	}
+\else
+	\geometry{includehead}
+	\pagestyle{headings}
+\fi
 
 % front matter
 \newcommand{\supervtext}{\iflanguage{italian}{relatore}{supervisor}}
