@@ -26,6 +26,9 @@
 	\pagestyle{headings}
 \fi
 
+% override text parameters
+\renewcommand{\baselinestretch}{1.1}
+
 % front matter
 \newcommand{\supervtext}{\iflanguage{italian}{relatore}{supervisor}}
 \newcommand{\cosupervtext}{\iflanguage{italian}{correlatore}{co-supervisor}}
