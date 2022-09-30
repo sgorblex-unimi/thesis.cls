@@ -90,3 +90,9 @@
 	\newpage
 	\restoregeometry
 }
+
+\newcommand{\prefacetitle}{\iflanguage{italian}{Introduzione}{Preface}}
+\newcommand{\preface}{
+	\chapter*{\prefacetitle}
+	\addcontentsline{toc}{chapter}{\prefacetitle}
+}
