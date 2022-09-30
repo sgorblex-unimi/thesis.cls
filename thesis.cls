@@ -44,6 +44,7 @@
 
 \renewcommand{\maketitle}{
 	\thispagestyle{empty}
+	\newgeometry{bottom=3cm}
 	\begin{center}
 		\ifdefined \@logo
 			\includegraphics{\@logo}
@@ -87,4 +88,5 @@
 		\large \@date
 	\end{center}
 	\newpage
+	\restoregeometry
 }
